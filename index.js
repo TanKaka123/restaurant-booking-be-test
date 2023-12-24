@@ -12,8 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const routes = require("./routes");
-routes(app)
+// const routes = require("./routes");
+// routes(app)
+
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
 
 async function startServer() {
   await connectToDatabase();
